@@ -1,0 +1,96 @@
+1. pygame library 
+    =opensource python programming library for multimedia application 
+    -cmd:pip install pygame
+    -game resource: suanlab.com
+
+2. game screen setting
+    -import pygame, sys, time(sleep), random
+    -game_pad size and color
+    -init_game() function: 게임 초기화
+
+3. def run_game()
+    -while 반복문으로 시작
+    -event별 if 문 설정
+    -game frame: clock.tick(n) 설정    
+
+4. draw_object(obj,(x,y))
+    -init_game()/image load: pygame.image.load('~')
+    -run_game()/image run: draw_object(image,(x,y))
+
+5. fighter setting
+    -fighter| image load > size > place > image draw
+    -fighter| key:event > place resetting
+
+6. missile setting
+    -missile list []: more than one / location
+    -missile| image load > key:event(shooting point,append list) > missile movement + multiple > draw
+
+7. rock setting
+    -list: multiple image load
+    -rock| image load > size > place:random > draw
+    -rock explosion setting
+    -rock hit setting > new rock
+
+8. game_score setting
+    -font setting
+    -message setting
+    -shot/missed counting setting
+    -fighter crash setting
+
+# informations
+pip install <lib_name>
+    =installing library in cmd
+    ex) cmd: pip install pygame
+
+time module    
+    
+    1. time.sleep(n)
+    =pause the thread for 'n' second
+    
+    2. time.time()
+    =return the time(second) after 1970.1.1 00:00:00 UTC
+    *KOR: 'UTC+9' 
+    ex) start_time=time.time()
+        ~
+        print(time.time()-start_time)
+
+get_rect().~
+    =get the object from image
+    *rect:reeipt
+    ex) skan=pygame.image.load('skan.png')
+        skan_size=skan.get_rect().size
+        skan_x=skan_size[0]
+        skan_y=skan_size[1]
+
+try/except
+    = error passing(에러와 예외처리)
+    ex) try:
+            ~
+        except:
+            pass
+
+enumerate
+    = index, list value를 열거
+    ex) fruit=['a','b','c','d']
+        for i,x in enumerate(fruit):        
+            print(i,x)              # i= index / x= list value  
+        # or
+        e=0
+        for i in fruit:
+            print(e,i)
+            if e==3:
+                break
+            e+=1 
+
+random module
+    
+    1. random.randint(x,y)
+    = result: random int in x~y range
+    ex) for i range(4)
+            print(random.randint(1,100))
+        = 1~100 중 랜덤 정수 4개 추출
+
+    2. random.randrange(x,y,z)
+    * x = start / y = stop / z = step
+
+
